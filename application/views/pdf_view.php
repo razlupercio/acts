@@ -117,7 +117,7 @@ function split_nserie($string) {
 //        echo "<br>";
 //        echo var_dump($items_id);
         ?>
-    <center><p class="head">PROPUESTA SERVIDORES <?php echo $retiro; ?></p></center>
+    <center><p class="head">PROPUESTA SERVIDORES <?php echo $retiro; ?></p>
     <table width="100%">
         <tr>
             <td>DIRECTOR: <strong><?php echo $director; ?></strong></td>
@@ -133,14 +133,14 @@ function split_nserie($string) {
         <thead>
             <tr>
                 <th></th>
-                <th>NOMBRE</th>
-                <th>DOMICILIO</th>                
-                <th>TELEFONO</th>
-                <th>CELULAR</th>
-                <th>EMAIL</th>
-                <th>RETIRO VIVIÓ</th>
-                <th>ÚLTIMO RETIRO SIRVIO</th>
-                <th>RETIRO SERVIDOS</th>
+                <th align='center'>NOMBRE</th>
+                <td align='center'>DOMICILIO</th>                
+                <td align='center'>TELEFONO</th>
+                <td align='center'>CELULAR</th>
+                <td align='center'>EMAIL</th>
+                <td align='center'>RETIRO VIVIÓ</th>
+                <td align='center'>ÚLTIMO RETIRO SIRVIO</th>
+                <td align='center'>RETIRO SERVIDOS</th>
             </tr>
         </thead>
         <tbody>
@@ -149,20 +149,21 @@ function split_nserie($string) {
             foreach ($servidores as $servidor) {
                 $ultimo = $this->acts_model->get_retiro($servidor["servido"]);
                 echo "<tr>"
-                . "<td>" . $i . "</td>"
-                . "<td>" . $servidor["nombre_completo"] . "</td>"
-                . "<td>" . $servidor["domicilio"] . "</td>"
-                . "<td>" . $servidor["telefono"] . "</td>"
-                . "<td>" . $servidor["cel"] . "</td>"
-                . "<td>" . $servidor["email"] . "</td>"
-                . "<td>" . $servidor["identificador_retiro"] . "</td>"
-                . "<td>" . $ultimo. "</td>"
-                . "<td>" . $servidor["n_servidos"] . "</td>"
+                . "<td align='center'>" . $i . "</td>"
+                . "<td align='center'>" . $servidor["nombre_completo"] . "</td>"
+                . "<td align='center'>" . $servidor["domicilio"] . "</td>"
+                . "<td align='center'>" . $servidor["telefono"] . "</td>"
+                . "<td align='center'>" . $servidor["cel"] . "</td>"
+                . "<td align='center'>" . $servidor["email"] . "</td>"
+                . "<td align='center'>" . $servidor["identificador_retiro"] . "</td>"
+                . "<td align='center'>" . $ultimo. "</td>"
+                . "<td align='center'>" . $servidor["n_servidos"] . "</td>"
                 . "</tr>";
                 $i++;
             }
             ?>
         </tbody>
     </table>
+    </center>
 </body>
 </html>

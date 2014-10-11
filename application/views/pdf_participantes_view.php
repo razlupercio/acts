@@ -116,7 +116,7 @@ function split_nserie($string) {
 //        echo "<br>";
 //        echo var_dump($items_id);
         ?>
-    <center><p class="head">PARTICIPANTES <?php echo $retiro; ?></p></center>
+    <center><p class="head">PARTICIPANTES <?php echo $retiro; ?></p>
     <table width="100%">
         <tr>
             <td>DIRECTOR: <strong><?php echo $director; ?></strong></td>
@@ -132,11 +132,11 @@ function split_nserie($string) {
         <thead>
             <tr>
                 <th></th>
-                <th>NOMBRE</th>
-                <th>DOMICILIO</th>                
-                <th>TELEFONO</th>
-                <th>CELULAR</th>
-                <th>EMAIL</th>
+                <td align='center'>NOMBRE</th>
+                <td align='center'>DOMICILIO</th>                
+                <td align='center'>TELEFONO</th>
+                <td align='center'>CELULAR</th>
+                <td align='center'>EMAIL</th>
             </tr>
         </thead>
         <tbody>
@@ -146,16 +146,17 @@ function split_nserie($string) {
                 $ultimo = $this->acts_model->get_retiro($participante["servido"]);
                 echo "<tr>"
                 . "<td>" . $i . "</td>"
-                . "<td>" . $participante["nombre_completo"] . "</td>"
-                . "<td>" . $participante["domicilio"] . "</td>"
-                . "<td>" . $participante["telefono"] . "</td>"
-                . "<td>" . $participante["cel"] . "</td>"
-                . "<td>" . $participante["email"] . "</td>"
+                . "<td align='center'>" . $participante["nombre_completo"] . "</td>"
+                . "<td align='center'>" . $participante["domicilio"] . "</td>"
+                . "<td align='center'>" . $participante["telefono"] . "</td>"
+                . "<td align='center'>" . $participante["cel"] . "</td>"
+                . "<td align='center'>" . $participante["email"] . "</td>"
                 . "</tr>";
                 $i++;
             }
             ?>
         </tbody>
     </table>
+</center>    
 </body>
 </html>

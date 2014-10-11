@@ -27,6 +27,14 @@ class reporte extends CI_Controller {
         $this->load->library('excel');
 //activate worksheet number 1
         $this->excel->setActiveSheetIndex(0);
+    $this->excel->getDefaultStyle()
+    ->getAlignment()
+    ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+for($col = 'A'; $col !== 'G'; $col++) {
+        $this->excel->getActiveSheet()->getActiveSheet()
+        ->getColumnDimension($col)
+        ->setAutoSize(true);
+}
 //name the worksheet
         $this->excel->getActiveSheet()->setTitle('test worksheet');
 //set cell A1 content with some text
@@ -253,6 +261,15 @@ class reporte extends CI_Controller {
         $this->load->library('excel');
 //activate worksheet number 1
         $this->excel->setActiveSheetIndex(0);
+        $this->excel->getDefaultStyle()
+        ->getAlignment()
+        ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+
+        for($col = 'A'; $col !== 'G'; $col++) {
+        $this->excel->getActiveSheet()->getActiveSheet()
+        ->getColumnDimension($col)
+        ->setAutoSize(true);
+        }    
 //name the worksheet
         $this->excel->getActiveSheet()->setTitle('test worksheet');
 //set cell A1 content with some text
